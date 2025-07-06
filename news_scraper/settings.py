@@ -12,7 +12,9 @@ from .utils import get_interface_ips
 ###################
 
 # scrapes articles only within the given date range
-DATE_RANGE = (datetime.today(), datetime.now())  # scrapes only articles published today
+from datetime import timedelta
+DATE_RANGE = (datetime.now() - timedelta(days=30), datetime.now())  # scrapes articles from last 30 days
+# DATE_RANGE = (datetime.today(), datetime.now())  # scrapes only articles published today
 # DATE_RANGE = ("2020-01-01", datetime.now()) # scrape all articles from 2020 until today
 
 # SCRAPE_MODE = dump -> scrapes all articles in date_range
